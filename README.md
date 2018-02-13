@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # mfdmodule
 
 > A Vue.js project
@@ -22,4 +21,3 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 =======
 # MFDModule
->>>>>>> 571b227c41f2cf48726f367f4e526b8fb046a04a
