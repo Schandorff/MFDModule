@@ -1,3 +1,8 @@
+$globalMaxWidth: 1375px;
+body{
+  margin: 0;
+  padding: 0;
+}
 .mainContainer{
   max-width: 1375px;
   display: grid;
@@ -7,5 +12,5 @@
 }
 .threeCols{
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: 4fr 4fr 4fr;
 }

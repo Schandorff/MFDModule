@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueAgile from 'vue-agile'
 
 Vue.config.productionTip = false
+Vue.use(VueAgile)
 
 /* eslint-disable no-new */
 new Vue({
