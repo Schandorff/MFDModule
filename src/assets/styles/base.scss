@@ -1,0 +1,11 @@
+.mainContainer{
+  max-width: 1375px;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.threeCols{
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
