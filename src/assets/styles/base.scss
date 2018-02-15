@@ -1,4 +1,12 @@
-$globalMaxWidth: 1375px;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$desk: 1600px;
+$tablet: 981px;
+$mobile: 500px;
+
+*{
+  font-family: 'Open Sans';
+}
 body{
   margin: 0;
   padding: 0;
@@ -10,7 +18,26 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
-.threeCols{
-  display: grid;
-  grid-template-columns: 4fr 4fr 4fr;
+
+@media screen and (max-width: $desk) {
+    .mainContainer{
+      max-width: 1170px;
+    }
+    .innerSliderContainer{
+      max-width: 1170px;
+    }
+    .mainHeader{
+      max-width: 1170px;
+    }
+}
+@media screen and (min-width: $desk) {
+    .mainContainer{
+      max-width: 1440px;
+    }
+    .innerSliderContainer{
+      max-width: 1440px;
+    }
+    .mainHeader{
+      max-width: 1440px;
+    }
 }

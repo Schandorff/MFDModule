@@ -3,8 +3,6 @@
     <agile>
     <div class="slide slide--1">
       <div class="innerSliderContainer">
-
-
       <div>
     </div>
     <div>
@@ -15,21 +13,25 @@
     </div>
     </div>
     <div class="slide slide--1">
+      <div class="innerSliderContainer">
       <div>
     </div>
     <div>
     </div>
     <div>
-      <button class="slideButton"></button>
+      <button class="slideButton" a href="#">Learn more about great deals</button>
     </div>
-  </div>
+    </div>
+    </div>
     <div class="slide slide--1">
+      <div class="innerSliderContainer">
       <div>
     </div>
     <div>
     </div>
     <div>
-      <button class="slideButton"></button>
+      <button class="slideButton" a href="#">Learn more about great deals</button>
+    </div>
     </div>
     </div>
     </agile>
@@ -132,22 +134,22 @@ export default {
         background-image: url(../../assets/images/Header/HEADER.jpg);
     }
     .innerSliderContainer{
-      max-width: 1375px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 4fr 4fr 4fr;
       height: 100%;
       div{
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-around;
         .slideButton{
           text-transform: uppercase;
           border: 2px solid #fff;
           padding: 20px 30px;
-          bottom: 20vh;
           color: #fff;
           background: transparent;
-          margin-bottom: 18vh;
+          margin-bottom: 100px;
+          z-index: 999999;
+          font-size: 18px;
           &:hover{
             background: #fff;
             color: #33d0de;

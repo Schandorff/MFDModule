@@ -2,14 +2,14 @@
   <nav>
 <div class="mainHeader">
  <div class="logoContainer">
-
+   <img src="../assets/images/Header/classy.png" alt="ClassyLogo">
  </div>
  <div class="mainMenu">
    <ul>
-     <li>Login</li>
-     <li>Cart</li>
-     <li>Search</li>
-     <li><div class="zap-slideout-opener" @click="toggle">{{openerText}}</div></li>
+     <li><a href="#"><img src="../assets/images/Header/login.png" alt="login">Login</a></li>
+     <li><a href="#"><img src="../assets/images/Header/shoppingBag.png" alt="bag">3 items</a></li>
+     <li><a href="#"><img src="../assets/images/Header/glass.png" alt="glass"></a></li>
+     <li><div class="zap-slideout-opener" @click="toggle"><img src="../assets/images/Header/burgerMenu.png" alt="burger"></div></li>
    </ul>
   </div>
 </div>
@@ -34,7 +34,8 @@ export default {
     openerText: 'Open',
     isOpen: false,
     menu: [ 'Home', 'Work', 'Contact' ],
-    smallMenu: [ 'Tips', 'Resources', 'Shenanigans' ]
+    smallMenu: [ 'Tips', 'Resources', 'Shenanigans' ],
+    imgAssets: '../assets/images/Header/'
   }),
   methods: {
     open() {
@@ -119,7 +120,6 @@ export default {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 9fr 3fr;
-  max-width: 1375px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -132,7 +132,19 @@ export default {
     justify-content: space-between;
     li{
       list-style: none;
+      a{
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        img{
+          margin-right: 10px;
+        }
+      }
     }
+  }
+  .logoContainer{
+    display: flex;
+    align-self: center;
   }
 }
 </style>
