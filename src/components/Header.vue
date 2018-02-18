@@ -2,7 +2,7 @@
   <nav>
 <div class="mainHeader">
  <div class="logoContainer">
-   <img src="../assets/images/Header/classy.png" alt="ClassyLogo">
+   <router-link :to='"/"'><img src="../assets/images/Header/classy.png" alt="ClassyLogo"></router-link>
  </div>
  <div class="mainMenu">
    <ul>
@@ -17,12 +17,13 @@
        :class="{ isOpen: isOpen }">
     <ul class="zap-slideout-menu">
       <li class="zap-slideout-menu-item">
-        <img class="zap-emoji" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19332/zap-emoji.svg" alt="Zap Emoji" />
       </li>
       <li class="zap-slideout-menu-item"
-        v-for="item in menu">{{item}}</li>
-      <li class="zap-slideout-menu-item--small"
-        v-for="item in smallMenu">{{item}}</li>
+        v-for="item in menu">
+        <router-link :to="item.link">
+        {{item.title}}
+      </router-link>
+      </li>
     </ul>
   </div>
 </nav>
@@ -33,10 +34,18 @@ export default {
   data: () => ({
     openerText: 'Open',
     isOpen: false,
-    menu: [ 'Home', 'Work', 'Contact' ],
-    smallMenu: [ 'Tips', 'Resources', 'Shenanigans' ],
+    menu: [
+      {title: 'Home', link: '/'},
+      {title: 'Collection', link: '/collection/'},
+      {title: 'Contact', link: '/contact/'}
+      ],
     imgAssets: '../assets/images/Header/'
   }),
+  watch: {
+    '$route' (to, from){
+      this.close()
+    }
+  },
   methods: {
     open() {
       this.openerText = 'Close';
@@ -59,21 +68,26 @@ export default {
 
 <style lang="scss">
 .zap-slideout {
-  position: absolute;
-  width: 240px;
+  position: fixed;
+  width: 100%;
   height: 100vh;
   padding: 30px;
   background-color: #34495e;
   opacity: 0;
   transition: opacity 0.6s ease-out;
-
+  z-index: -99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-align: center;
   &.isOpen {
      opacity: 1;
+     z-index: 999;
   }
 }
 
 .zap-slideout-opener {
-  color: black;
   cursor: pointer;
   z-index: 99999;
   &:hover {
@@ -89,13 +103,17 @@ export default {
 .zap-slideout-menu-item,
 .zap-slideout-menu-item--small {
   cursor: pointer;
-
+  list-style: none;
   &:hover {
     text-decoration: underline;
   }
 
   & + & {
     margin-top: 20px;
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
   }
 }
 
@@ -107,14 +125,6 @@ export default {
   }
 }
 
-.zap-slideout-menu-item--small {
-  font-size: 18px;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #ecf0f1;
-}
-
 .mainHeader{
   width: 100%;
   display: grid;
@@ -124,7 +134,7 @@ export default {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   ul{
     display: flex;
@@ -136,8 +146,10 @@ export default {
         color: #fff;
         text-decoration: none;
         text-transform: uppercase;
+        font-size: 14px;
         img{
           margin-right: 10px;
+          vertical-align: sub;
         }
       }
     }

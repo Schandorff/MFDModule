@@ -4,17 +4,24 @@
   <div class="mainContainer">
     <look-book>
     </look-book>
-
-    <logo-slider>
-    </logo-slider>
+</div>
+<logo-slider>
+</logo-slider>
+<div class="mainContainer">
 
     <special-offers>
     </special-offers>
 
     <selected-products>
     </selected-products>
+</div>
+    <summer-campaign>
+    </summer-campaign>
 
-  </div>
+    <testimonial>
+    </testimonial>
+
+
 </div>
 
 </template>

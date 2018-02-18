@@ -4,14 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueAgile from 'vue-agile'
+import Tabs from 'vue-tabs-component'
+import VueCarousel from 'vue-carousel';
 
 Vue.config.productionTip = false
 Vue.use(VueAgile)
+Vue.use(Tabs)
+Vue.use(VueCarousel)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })

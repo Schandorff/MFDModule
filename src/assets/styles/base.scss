@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 $desk: 1600px;
 $tablet: 981px;
 $mobile: 500px;
-
 *{
   font-family: 'Open Sans';
 }
@@ -29,6 +28,9 @@ body{
     .mainHeader{
       max-width: 1170px;
     }
+    .carrouselContainer{
+      max-width: 1170px;
+    }
 }
 @media screen and (min-width: $desk) {
     .mainContainer{
@@ -40,4 +42,60 @@ body{
     .mainHeader{
       max-width: 1440px;
     }
+    .carrouselContainer{
+    max-width: 1440px;
+    }
 }
+@mixin transition($duration) {
+    -webkit-transition: $duration;
+    -moz-transition: $duration;
+    -ms-transition: $duration;
+    -o-transition: $duration;
+    transition: $duration;
+}
+  .productContainer{
+      list-style: none;
+      padding: 0px;
+      display: grid;
+      grid-template-columns: 3fr 3fr 3fr 3fr;
+      grid-gap: 20px;
+      .productItem{
+
+        .productImage{
+          width: 100%;
+        }
+        .productTitle{
+          font-size: 16px;
+          font-weight: 300;
+          text-align: center;
+        }
+        .bottomLine{
+          display: flex;
+          justify-content: space-between;
+          .productPrice{
+            align-self: center;
+            font-weight: 600;
+          }
+          button{
+            display: flex;
+            padding: 5px 15px;
+            border: 1px solid #333;
+            @include transition(.5s)
+            img{
+              vertical-align: middle;
+              margin-right: 10px;
+            }
+            span{
+              text-transform: uppercase;
+              font-size: 14px;
+              font-weight: 300
+            }
+            &:hover{
+              background-color: #333;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }

@@ -11,9 +11,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "vue": "^2.5.2",
     "vue-agile": "^0.3.7",
-    "vue-router": "^3.0.1"
+    "vue-carousel": "^0.6.5",
+    "vue-router": "^3.0.1",
+    "vue-tabs-component": "^1.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
