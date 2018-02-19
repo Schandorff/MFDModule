@@ -16,10 +16,6 @@
       <option value="black">Black</option>
       <option value="white">White</option>
     </select>
-    <select >
-      <option value="black">Black</option>
-      <option value="white">White</option>
-    </select>
   </div>
 
   <ul class="productContainer">
@@ -106,5 +102,10 @@ methods: {
   display: flex;
   justify-content: space-between;
   max-width: 500px;
+  select{
+    border: 1px solid #333;
+    background-color: transparent;
+    border-radius: 0;
+  }
 }
 </style>

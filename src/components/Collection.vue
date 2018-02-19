@@ -5,8 +5,8 @@
 
   <products-area>
   </products-area>
-  <div class="mainContainer">
-  </div>
+  <news-letter>
+  </news-letter>
 
 </div>
 
@@ -15,13 +15,15 @@
 <script>
 import CollectionHeader from '@/components/collection/CollectionHeader'
 import Products from '@/components/collection/Products'
+import NewsLetter from '@/components/collection/NewsLetter'
 
 
 export default {
   name: 'Collection',
   components: {
     'collection-header': CollectionHeader,
-    'products-area': Products
+    'products-area': Products,
+    'news-letter': NewsLetter
   }
 }
 </script>
