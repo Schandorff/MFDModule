@@ -1,31 +1,33 @@
 <template lang="html">
   <nav>
-<div class="mainHeader">
- <div class="logoContainer">
-   <router-link :to='"/"'><img src="../assets/images/Header/classy.png" alt="ClassyLogo"></router-link>
- </div>
- <div class="mainMenu">
-   <ul>
-     <li><a href="#"><img src="../assets/images/Header/login.png" alt="login">Login</a></li>
-     <li><a href="#"><img src="../assets/images/Header/shoppingBag.png" alt="bag">3 items</a></li>
-     <li><a href="#"><img src="../assets/images/Header/glass.png" alt="glass"></a></li>
-     <li><div class="zap-slideout-opener" @click="toggle"><img src="../assets/images/Header/burgerMenu.png" alt="burger"></div></li>
-   </ul>
-  </div>
-</div>
-<div class="zap-slideout"
-       :class="{ isOpen: isOpen }">
-    <ul class="zap-slideout-menu">
-      <li class="zap-slideout-menu-item">
-      </li>
-      <li class="zap-slideout-menu-item"
-        v-for="item in menu">
-        <router-link :to="item.link">
-        {{item.title}}
-      </router-link>
-      </li>
+    <div class="headerContainer">
+      <div class="mainHeader">
+       <div class="logoContainer">
+         <router-link :to='"/"'><img src="../assets/images/Header/classy.png" alt="ClassyLogo"></router-link>
+       </div>
+       <div class="mainMenu">
+         <ul>
+           <li><a href="#"><img src="../assets/images/Header/login.png" alt="login">Login</a></li>
+           <li><a href="#"><img src="../assets/images/Header/shoppingBag.png" alt="bag">3 items</a></li>
+           <li><a href="#"><img src="../assets/images/Header/glass.png" alt="glass"></a></li>
+           <li><div class="zap-slideout-opener" @click="toggle"><img src="../assets/images/Header/burgerMenu.png" alt="burger"></div></li>
+         </ul>
+        </div>
+      </div>
+      <div class="zap-slideout"
+             :class="{ isOpen: isOpen }">
+          <ul class="zap-slideout-menu">
+            <li class="zap-slideout-menu-item">
+            </li>
+            <li class="zap-slideout-menu-item"
+              v-for="item in menu">
+              <router-link :to="item.link">
+              {{item.title}}
+            </router-link>
+            </li>
     </ul>
   </div>
+</div>
 </nav>
 </template>
 
@@ -72,18 +74,18 @@ export default {
   width: 100%;
   height: 100vh;
   padding: 30px;
-  background-color: #34495e;
+  background-color: #33d0de;
   opacity: 0;
   transition: opacity 0.6s ease-out;
   z-index: -99999;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   padding: 0;
   text-align: center;
   &.isOpen {
+    display: flex;
      opacity: 1;
-     z-index: 999;
   }
 }
 
@@ -98,6 +100,7 @@ export default {
 .zap-slideout-menu {
   font-weight: 600;
   color: #fff;
+  padding: 0;
 }
 
 .zap-slideout-menu-item,
@@ -124,39 +127,43 @@ export default {
     margin-top: 30px;
   }
 }
-
-.mainHeader{
-  width: 100%;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 9fr 3fr;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: fixed;
-  z-index: 9999;
-  ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    li{
-      list-style: none;
-      a{
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 14px;
-        img{
-          margin-right: 10px;
-          vertical-align: sub;
+.headerContainer{
+      width: 100%;
+      height: 55px;
+      position: fixed;
+          z-index: 9999;
+  .mainHeader{
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 9fr 3fr;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      li{
+        list-style: none;
+        a{
+          color: #fff;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 14px;
+          img{
+            margin-right: 10px;
+            vertical-align: sub;
+          }
         }
       }
     }
-  }
-  .logoContainer{
-    display: flex;
-    align-self: center;
+    .logoContainer{
+      display: flex;
+      align-self: center;
+    }
   }
 }
 </style>

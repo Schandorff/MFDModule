@@ -12,7 +12,7 @@
     "features": "short",
     "size": "m",
     "colour": "black",
-    "onSale": "true"
+    "onSale": true
 
   },
   {
@@ -28,7 +28,7 @@
     "features": "short",
     "size": "m",
     "colour": "black",
-    "onSale": "false"
+    "onSale": false
   },
   {
     "id": 3,
@@ -43,7 +43,7 @@
     "features": "short",
     "size": "m",
     "colour": "white",
-    "onSale": "true"
+    "onSale": true
   },
   {
     "id": 4,
@@ -57,7 +57,8 @@
     "featured": false,
     "features": "short",
     "size": "m",
-    "colour": "black"
+    "colour": "black",
+    "onSale": true
   },
   {
     "id": 5,
@@ -71,7 +72,8 @@
     "featured": true,
     "features": "short",
     "size": "m",
-    "colour": "black"
+    "colour": "black",
+    "onSale": true
   },
   {
     "id": 6,
@@ -85,6 +87,157 @@
     "featured": true,
     "features": "long",
     "size": "l",
-    "colour": "black"
+    "colour": "black",
+    "onSale": true
+  },
+  {
+    "id": 7,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress3.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": false
+  },
+  {
+    "id": 8,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress4.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 9,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress5.jpg",
+    "price": 55.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "l",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 10,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress6.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "short",
+    "size": "s",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 11,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress7.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 12,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress8.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 13,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress9.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 14,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress10.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": true
+  },
+  {
+    "id": 15,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress11.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": false
+  },
+  {
+    "id": 16,
+    "brand": "Pull&Bear",
+    "title": "Aztec Printed Jumpsuit",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum",
+    "image": "/dress12.jpg",
+    "price": 66.25,
+    "topSeller": true,
+    "newArrival": false,
+    "featured": true,
+    "features": "long",
+    "size": "s",
+    "colour": "white",
+    "onSale": false
   }
 ]

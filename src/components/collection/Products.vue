@@ -21,11 +21,11 @@
   <ul class="productContainer">
     <li v-for="product in products" v-bind:key="product.id">
       <div class="productItem">
-        <img class="productImage" v-bind:src="'./static/images/' + product.image" v-bind:alt="product.title">
+        <img class="productImage" v-bind:src="'/static/images/' + product.image" v-bind:alt="product.title">
         <h4 class="productTitle">{{product.brand}}{{product.title}}</h4>
         <div class="bottomLine">
         <span class="productPrice">${{product.price}}</span>
-        <button type="button" name="addToBag"><img src="../../../static/images/bagGray.png" alt="add to bag">
+        <button type="button" name="addToBag"><img src="/static/images/bagGray.png" alt="add to bag">
           <span>Add to bag</span>
         </button>
         </div>
@@ -107,5 +107,8 @@ methods: {
     background-color: transparent;
     border-radius: 0;
   }
+}
+.productContainer{
+  margin-bottom: 75px;
 }
 </style>
