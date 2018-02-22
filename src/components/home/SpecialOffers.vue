@@ -18,12 +18,23 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
 .offersContainer{
   display: grid;
   grid-template-columns: 7fr 5fr;
   grid-template-areas:
   "left rightOne"
   "left rightTwo";
+  @media #{$phoneQuery}{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "left"
+    "rightOne"
+    "rightTwo";
+    img{
+      width: 100%;
+    }
+  }
   .item1{
     grid-area: left;
   }

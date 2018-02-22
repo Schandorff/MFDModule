@@ -1,5 +1,10 @@
 <template lang="html">
   <div class="outerContainer">
+    <div class="inspirationIntro mainContainer">
+      <h2>Sharpen Your Look</h2>
+      <hr>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+    </div>
     <div class="innerInspiration">
       <div class="inspirationImage img1">
 
@@ -67,6 +72,8 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
+
 @mixin transition($duration) {
     -webkit-transition: $duration;
     -moz-transition: $duration;
@@ -74,14 +81,44 @@ export default {
     -o-transition: $duration;
     transition: $duration;
 }
+.inspirationIntro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 951px;
+  padding: 50px 0;
+  h2{
+    font-size: 62px;
+    margin: 10px 0;
+    @media #{$phoneQuery}{
+      font-size: 24px;
+    }
+  }
+  hr{
+    background-color: #33cfdd;
+    height: 5px;
+    width: 100px;
+    border: 0;
+  }
+  p{
+    color: #a4a4a4;
+    text-align: center;
+  }
+}
 .innerInspiration{
   display: grid;
   grid-template-columns: 6fr 6fr;
   width: 100%;
-  grid-auto-rows: 1fr;
+  @media #{$phoneQuery}{
+    grid-template-columns: 1fr;
+  }
   .inspirationImage{
     background-size: cover;
     height: 600px;
+    @media #{$phoneQuery}{
+      background-repeat: no-repeat;
+      height: 350px;
+    }
   }
   .img1{
     background-image: url(/static/images/product/AdeliaDressCut1.jpg);

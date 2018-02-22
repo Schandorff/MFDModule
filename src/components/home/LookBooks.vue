@@ -47,6 +47,8 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
+
 @mixin transition($duration) {
     -webkit-transition: $duration;
     -moz-transition: $duration;
@@ -59,6 +61,9 @@ export default {
   grid-template-columns: 3fr 5fr 3fr;
   grid-auto-rows: minmax(350px, 350px);
   margin: 50px 0;
+  @media #{$phoneQuery}{
+    grid-template-columns: 1fr;
+  }
   .col{
     a{
       text-decoration: none;

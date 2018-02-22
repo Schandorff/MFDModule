@@ -5,8 +5,8 @@
         <ul class="productContainer">
           <li v-for="product in newProducts" v-bind:key="product.id">
             <div class="productItem">
-              <img class="productImage" v-bind:src="'./static/images/' + product.image" v-bind:alt="product.title">
-              <h4 class="productTitle">{{product.brand}}{{product.title}}</h4>
+              <router-link :to='"/product/" + product.id'><img class="productImage" v-bind:src="'./static/images/' + product.image" v-bind:alt="product.title">
+              <h4 class="productTitle">{{product.brand}} {{product.title}}</h4></router-link>
               <div class="bottomLine">
               <span class="productPrice">${{product.price}}</span>
               <button type="button" name="addToBag"><img src="../../../static/images/bagGray.png" alt="add to bag">
@@ -22,7 +22,7 @@
           <li v-for="product in topProducts" v-bind:key="product.id">
             <div class="productItem">
               <img class="productImage" v-bind:src="'./static/images/' + product.image" v-bind:alt="product.title">
-              <h4 class="productTitle">{{product.brand}}{{product.title}}</h4>
+              <h4 class="productTitle">{{product.brand}} {{product.title}}</h4>
               <div class="bottomLine">
               <span class="productPrice">${{product.price}}</span>
               <button type="button" name="addToBag"><img src="../../../static/images/bagGray.png" alt="add to bag">
@@ -38,7 +38,7 @@
           <li v-for="product in featuredProducts" v-bind:key="product.id">
             <div class="productItem">
               <img class="productImage" v-bind:src="'./static/images/' + product.image" v-bind:alt="product.title">
-              <h4 class="productTitle">{{product.brand}}{{product.title}}</h4>
+              <h4 class="productTitle">{{product.brand}} {{product.title}}</h4>
               <div class="bottomLine">
               <span class="productPrice">${{product.price}}</span>
               <button type="button" name="addToBag"><img src="../../../static/images/bagGray.png" alt="add to bag">
@@ -118,6 +118,8 @@ export default {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    text-decoration: none;
+    padding: 0px;
     >li{
       margin: 0 20px;
       >a{

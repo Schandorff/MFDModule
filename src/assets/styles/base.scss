@@ -2,7 +2,8 @@
 
 $desk: 1600px;
 $tablet: 981px;
-$mobile: 500px;
+$phone: 780px;
+$phoneQuery: "only screen and (max-width : 780px)";
 *{
   font-family: 'Open Sans';
 }
@@ -17,7 +18,9 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
-
+*:focus {
+    outline: none;
+}
 @media screen and (max-width: $desk) {
     .mainContainer{
       max-width: 1170px;
@@ -46,6 +49,20 @@ body{
     max-width: 1440px;
     }
 }
+@media screen and (max-width: $phone) {
+    .mainContainer{
+      max-width: 100%;
+    }
+    .innerSliderContainer{
+      max-width: 100%;
+    }
+    .mainHeader{
+      max-width: 100%;
+    }
+    #app{
+      overflow: hidden;
+    }
+}
 @mixin transition($duration) {
     -webkit-transition: $duration;
     -moz-transition: $duration;
@@ -59,8 +76,15 @@ body{
       display: grid;
       grid-template-columns: 3fr 3fr 3fr 3fr;
       grid-gap: 20px;
+      @media #{$phoneQuery}{
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+      }
       .productItem{
-
+        a{
+          text-decoration: none;
+          color: black
+        }
         .productImage{
           width: 100%;
         }

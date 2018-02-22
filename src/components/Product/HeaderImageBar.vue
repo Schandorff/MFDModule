@@ -1,15 +1,19 @@
 <template lang="html">
   <div class="headerImageBar">
-    <span>50% off summer collection</span>
+    <span>{{title}}</span>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'headerImageBar',
+  props: ['title']
 }
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
+
 .headerImageBar{
   background-image: url(/static/images/product/50OffImg.jpg);
   background-size: cover;
@@ -24,6 +28,9 @@ export default {
     margin: 20px 0;
     font-weight: 300;
     letter-spacing: 10px;
+    @media #{$phoneQuery}{
+      font-size: 1em;
+    }
   }
 }
 </style>

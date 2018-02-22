@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
 .bannerContainer{
   width: 100%;
   display: flex;
@@ -29,6 +30,9 @@ export default {
       text-transform: uppercase;
       margin: 0px;
       letter-spacing: 10px;
+      @media #{$phoneQuery}{
+        font-size: 22px;
+      }
     }
   }
 }

@@ -39,6 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
 .testimonialContainer{
   background-color: #33d0de;
   display: flex;
@@ -50,6 +51,10 @@ export default {
       margin: 0 auto;
       padding: 0 20px;
       color: #fff;
+      @media #{$phoneQuery}{
+        padding: 0 10px;
+        max-width: 300px;
+      }
       img{
         border-radius: 50%;
         border: 6px solid #71dee8;

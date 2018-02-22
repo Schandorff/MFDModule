@@ -70,6 +70,7 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
 @mixin transition($duration) {
     -webkit-transition: $duration;
     -moz-transition: $duration;
@@ -110,6 +111,11 @@ export default {
           grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
           max-width: 755px;
           margin: 0 auto;
+          padding: 0;
+          @media #{$phoneQuery}{
+            grid-template-columns: 2fr 2fr;
+            justify-items: center;
+          }
           li{
             border: 1px solid #c5c5c4;
             border-radius: 50%;
@@ -139,6 +145,11 @@ export default {
       .innerBottomFooter{
         display: grid;
         grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
+        @media #{$phoneQuery}{
+          grid-template-columns: 1fr;
+          text-align: center;
+          grid-gap: 10px;
+        }
         >div{
           h4{
             color: #fff;

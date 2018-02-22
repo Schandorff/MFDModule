@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+$phoneQuery: "only screen and (max-width : 780px)";
 .campaignContainer{
   background-image: url(../../../static/images/25OffBG.jpg);
   background-size: cover;
@@ -32,6 +32,9 @@ export default {
   align-content: center;
   align-items: center;
   justify-items: center;
+  @media #{$phoneQuery}{
+    grid-template-columns: 1fr;
+  }
   .percentContainer{
     border-radius: 50%;
     background-color:rgba(51, 208, 222, 0.8);
@@ -53,9 +56,15 @@ export default {
   }
   .leftBox{
       justify-self: flex-end;
+      @media #{$phoneQuery}{
+        justify-self: center;
+      }
   }
   .rightBox{
       justify-self: flex-start;
+      @media #{$phoneQuery}{
+        justify-self: center;
+      }
   }
   }
 }

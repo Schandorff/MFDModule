@@ -21,8 +21,8 @@
   <ul class="productContainer">
     <li v-for="product in products" v-bind:key="product.id">
       <div class="productItem">
-        <img class="productImage" v-bind:src="'/static/images/' + product.image" v-bind:alt="product.title">
-        <h4 class="productTitle">{{product.brand}}{{product.title}}</h4>
+        <router-link :to='"/product/" + product.id'><img class="productImage" v-bind:src="'/static/images/' + product.image" v-bind:alt="product.title">
+        <h4 class="productTitle">{{product.brand}}{{product.title}}</h4></router-link>
         <div class="bottomLine">
         <span class="productPrice">${{product.price}}</span>
         <button type="button" name="addToBag"><img src="/static/images/bagGray.png" alt="add to bag">
@@ -96,12 +96,24 @@ methods: {
 </script>
 
 <style lang="scss">
-
+$phoneQuery: "only screen and (max-width : 780px)";
 .sortingContainer{
   margin: 50px 0;
   display: flex;
   justify-content: space-between;
   max-width: 500px;
+  @media #{$phoneQuery}{
+    flex-wrap: wrap;
+    text-align: center;
+    span{
+      width: 100%;
+      padding: 0 20px;
+    }
+    justify-content: center;
+    select{
+      margin: 0 10px;
+    }
+  }
   select{
     border: 1px solid #333;
     background-color: transparent;

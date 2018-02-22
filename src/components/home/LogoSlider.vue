@@ -2,7 +2,7 @@
 <div class="logoSlider">
   <h3>Top Brands</h3>
   <div class="carrouselContainer">
-  <carousel :perPage="5" :autoplay="true" :perPageCustom="[[480, 2], [981, 3], [1170, 5]]">
+  <carousel :perPage="5" :autoplay="true" :perPageCustom="[[375, 1], [981, 3], [1170, 5]]">
   <slide v-for="logo in logos" :key="logo.id">
     <img v-bind:src="logo.img" v-bind:alt="logo.name">
   </slide>
@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
 
 .logoSlider{
   margin: 50px 0;
@@ -40,6 +41,9 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   text-align: center;
+  @media #{$phoneQuery}{
+    overflow: hidden;
+  }
   h3{
     font-size: 24px;
     text-transform: uppercase;

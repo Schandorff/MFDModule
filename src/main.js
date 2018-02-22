@@ -5,12 +5,14 @@ import App from './App'
 import router from './router'
 import VueAgile from 'vue-agile'
 import Tabs from 'vue-tabs-component'
-import VueCarousel from 'vue-carousel';
+import VueCarousel from 'vue-carousel'
+import VeeValidate from 'vee-validate'
 
 Vue.config.productionTip = false
 Vue.use(VueAgile)
 Vue.use(Tabs)
 Vue.use(VueCarousel)
+Vue.use(VeeValidate)
 
 /* eslint-disable no-new */
 new Vue({

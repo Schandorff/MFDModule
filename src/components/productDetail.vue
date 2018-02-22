@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="singleProductContainer">
-    <header-image-banner>
+    <header-image-banner title="50% off summer collection">
     </header-image-banner>
     <div class="productView mainContainer">
       <div class="previewThumbnails">
@@ -13,7 +13,7 @@
       <div class="productImage">
         <img v-bind:src="'/static/images/' + product.image" v-bind:alt="product.title">
       </div>
-      <div>
+      <div class="empty">
 
       </div>
       <div class="productInformation">
@@ -113,6 +113,8 @@ import axios from 'axios';
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
+
 @mixin transition($duration) {
     -webkit-transition: $duration;
     -moz-transition: $duration;
@@ -131,11 +133,23 @@ import axios from 'axios';
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 5fr;
+    grid-template-areas: "pPreview pImage empty pInfo";
     grid-gap: 20px;
+    @media #{$phoneQuery}{
+      grid-template-columns: 1fr;
+      grid-template-areas: "pImage"
+                           "pPreview"
+                           "pInfo";
+                           grid-gap: 20px 0;
+    }
       .previewThumbnails{
         display: flex;
         justify-content: center;
         flex-direction: column;
+        grid-area: pPreview;
+        @media #{$phoneQuery}{
+          flex-direction: row;
+        }
           div{
             align-self: center;
             margin-bottom: 5px;
@@ -150,14 +164,27 @@ import axios from 'axios';
               box-shadow: 0px 3px 8px 3px rgba(0,0,0,0.25);
             }
           }
+      .empty{
+        grid-area: empty;
+      }
       .productImage{
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        grid-area: pImage;
       }
       .productInformation{
+        grid-area: pInfo;
+        @media #{$phoneQuery}{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
         h1{
           font-weight: 300;
+          @media #{$phoneQuery}{
+            font-size: 22px;
+          }
         }
         .priceTag{
           display: flex;
@@ -190,6 +217,11 @@ import axios from 'axios';
             margin: 5px 0;
             font-size: 14px;
             padding: 0 10px;
+            @media #{$phoneQuery}{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
           }
           .optionsRow{
             display: flex;
@@ -197,6 +229,10 @@ import axios from 'axios';
             align-items: center;
             justify-content: space-between;
             font-size: 14px;
+            @media #{$phoneQuery}{
+              flex-wrap: wrap;
+              flex-direction: column;
+            }
             .sizeGuide{
               background-color: #eee;
               padding: 0 20px;
@@ -263,6 +299,9 @@ import axios from 'axios';
               border-bottom: 1px solid #a4a4a4;
               width: 34.3333%;
               text-align: center;
+              @media #{$phoneQuery}{
+                width: 33.33%;
+              }
               a{
                 text-decoration: none;
                 color: #333;

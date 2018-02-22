@@ -44,6 +44,8 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
+
 .slideContainer{
   width: 100%;
   .slideButton{
@@ -62,7 +64,7 @@ export default {
         button {
             background-color: transparent;
             border: 2px solid #fff;
-            line-height: 20px;
+            line-height: 20px !important;
             padding: 0px;
             margin: 20px 10px;
 
@@ -74,7 +76,7 @@ export default {
         &--current {
             button {
                 border: 2px solid #33d0de;
-                line-height: 35px;
+                line-height: 35px !important;
             }
         }
     }
@@ -93,7 +95,7 @@ export default {
         &--next{
           right: 0;
         }
-
+        @media only screen and (min-width : 780px){
         &:hover {
             background-color: rgba(#000, .5);
 
@@ -101,6 +103,7 @@ export default {
                 fill: #fff;
             }
         }
+      }
 
         &[disabled] {
             display: none;
@@ -138,6 +141,9 @@ export default {
       display: grid;
       grid-template-columns: 4fr 4fr 4fr;
       height: 100%;
+      @media #{$phoneQuery}{
+        grid-template-columns: 1fr;
+      }
       div{
         display: flex;
         justify-content: space-around;

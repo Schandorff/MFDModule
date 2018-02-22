@@ -1,6 +1,6 @@
 <template lang="html">
   <nav>
-    <div class="headerContainer">
+    <div class="headerContainer" v-bind:class="{ frontPage: isFront}">
       <div class="mainHeader">
        <div class="logoContainer">
          <router-link :to='"/"'><img src="../assets/images/Header/classy.png" alt="ClassyLogo"></router-link>
@@ -36,6 +36,7 @@ export default {
   data: () => ({
     openerText: 'Open',
     isOpen: false,
+    isFront: true,
     menu: [
       {title: 'Home', link: '/'},
       {title: 'Collection', link: '/collection/'},
@@ -45,7 +46,8 @@ export default {
   }),
   watch: {
     '$route' (to, from){
-      this.close()
+      this.close(),
+      this.isFrontPage()
     }
   },
   methods: {
@@ -63,12 +65,23 @@ export default {
       } else {
         this.open();
       }
+    },
+    isFrontPage(){
+      if (this.$route.path === "/"){
+        this.isFront = true;
+      }
+      else {
+        this.isFront = false;
+      }
+      console.log(this.$route.path);
+      console.log(this.isFront);
     }
   }
 }
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
 .zap-slideout {
   position: fixed;
   width: 100%;
@@ -88,6 +101,7 @@ export default {
      opacity: 1;
   }
 }
+
 
 .zap-slideout-opener {
   cursor: pointer;
@@ -132,6 +146,8 @@ export default {
       height: 55px;
       position: fixed;
           z-index: 9999;
+          background-color: #333;
+
   .mainHeader{
     width: 100%;
     display: grid;
@@ -147,6 +163,11 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       li{
+        @media #{$phoneQuery}{
+          &:nth-child(1),&:nth-child(2),&:nth-child(3){
+            display: none;
+          }
+        }
         list-style: none;
         a{
           color: #fff;
@@ -163,7 +184,13 @@ export default {
     .logoContainer{
       display: flex;
       align-self: center;
+      @media #{$phoneQuery}{
+        padding-left: 10px;
+      }
     }
   }
+}
+.frontPage{
+  background-color: transparent !important;
 }
 </style>

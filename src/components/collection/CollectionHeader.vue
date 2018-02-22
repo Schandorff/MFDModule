@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style lang="scss">
+$phoneQuery: "only screen and (max-width : 780px)";
+
 @mixin transition($duration) {
     -webkit-transition: $duration;
     -moz-transition: $duration;
@@ -48,6 +50,9 @@ export default {
         width: 200px;
         margin-bottom: 7px;
         margin-right: 10px;
+        @media #{$phoneQuery}{
+          width: 20px;
+        }
       }
       &:after{
         border-top: 1px solid #fff;
@@ -56,11 +61,18 @@ export default {
         width: 200px;
         margin-bottom: 7px;
         margin-left: 10px;
+        @media #{$phoneQuery}{
+          width: 20px;
+        }
       }
     }
     h1{
       font-size: 72px;
       margin:0;
+      @media #{$phoneQuery}{
+        font-size: 32px;
+        margin: 20px 0;
+      }
     }
     button{
       border: 2px solid #fff;
